@@ -1,0 +1,60 @@
+Levenshtein distances: Previous vs Modified
+ Levenshtein Distance  Previous  Modified
+                    0       703       927
+                    1       196        25
+                    2        43         5
+                    3        12         0
+                    4         3         1
+                    5         1         0
+                    6         1         0
+                    7         1         1
+                   87         0         1
+
+BLOSUM62 scores: Previous vs Modified
+ BLOSUM62 Score  Previous  Modified
+             25         0         1
+             30         0         0
+             35         0         0
+             40         0         0
+             45         1         0
+             50         1         1
+             55         0         0
+             60         0         0
+             65         3         0
+             70         4         3
+             75        10         1
+             80        36         2
+             85        80        28
+             90       225       204
+             95       323       369
+            100       231       291
+            105        44        58
+            110         2         2
+
+Levenshtein distance of test_seqs vs Hamming distance of binary vectors:
+Previous model Pearson corr: 0.4621611305939047
+Modified model Pearson corr: 0.7161614031325938
+
+Previous model Spearman corr: 0.4427807284425357
+Modified model Spearman corr: 0.7081178256811467
+
+BLOSUM62 scores of test_seqs vs Hamming distance of binary vectors:
+Previous model Pearson corr: -0.47400326929834213
+Modified model Pearson corr: -0.6833491165486026
+
+Previous model Spearman corr: -0.4552793151252201
+Modified model Spearman corr: -0.674728775294845
+
+The length of decoded_seqs by Previous model:
+seqs
+15    952
+16      5
+14      3
+
+The length of decoded_seqs by Modified model:
+seqs
+15     949
+16       6
+14       4
+100      1
+

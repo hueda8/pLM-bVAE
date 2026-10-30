@@ -1,0 +1,114 @@
+# ─── Identity ────────────────────────────────────────────────────────────────
+model_name: binary
+
+# ─── Paths ───────────────────────────────────────────────────────────────────
+data_path: /home/hueda8/projects/01_PLM_BVAE/data/peptide/random/plm-bvae/
+embeddings_path: ../embeddings_esm_650m/
+model_path: ./model_data/<model_name>/
+output_path: ./model_output/<model_name>/
+
+# ─── Vocabulary ──────────────────────────────────────────────────────────────
+vocab_size: 23
+
+# ─── Input / Embeddings ──────────────────────────────────────────────────────
+input_is_precomputed: true
+embedding_dim: 1280
+
+# ─── Encoder ─────────────────────────────────────────────────────────────────
+encoder_type: rnn_bidi
+encoder_layers: 2
+hidden_size: 128
+use_preproj_mlp: true
+
+# ─── Latent ──────────────────────────────────────────────────────────────────
+latent_type: binary
+latent_size: 64
+
+# ─── Decoder ─────────────────────────────────────────────────────────────────
+decoder_layers: 2
+decoder_embedding_dim: 2
+concat_latent_to_words: true
+
+# ─── Regularisation ──────────────────────────────────────────────────────────
+dropout_rate: 0.3
+word_dropout: 0.0
+input_noise_std: 0.01
+input_dropout_rate: 0.2
+weight_decay: 0.09731163200042212
+
+# ─── Training ────────────────────────────────────────────────────────────────
+tokens_per_batch: 250
+num_epochs: 300
+learning_rate: 0.0025681506388377197
+clip_grad_norm: 4.5
+max_input_length: 100
+max_output_length: 100
+buffer_size: 100
+label_smoothing: 0.00
+seed: 42
+early_stopping: null
+lr_schedule: null
+
+# ─── AMP / Precision ─────────────────────────────────────────────────────────
+amp_dtype: fp32
+use_amp: true
+allow_tf32: true
+grad_accum_steps: 3
+
+# ─── Index selection ─────────────────────────────────────────────────────────
+select_indices: null
+allow_sidecar_indices: false
+
+# ─── PLM ─────────────────────────────────────────────────────────────────────
+# Keys here are loaded as plm_<key>
+#   plm:
+#     backend: esm2    →  plm_backend: esm2
+plm:
+  backend: esm2
+  learning_rate: 0.00005
+  encoder_model: facebook/esm2_t33_650M_UR50D
+  tokenizer_model: facebook/esm2_t33_650M_UR50D
+  add_special_tokens: true
+  clean_mode: esm
+  allow_diff: false
+  batch_size: 8
+  device: auto
+  no_skip_existing: true
+  grad_checkpointing: true
+
+compat_plm: true
+
+
+# ─── LoRA Fine-tuning ──────────────────────────────────────────────────────
+# Keys here are loaded as lora_<key>
+#   lora:
+#     enable: false    →  lora_enable: false
+lora:
+  enable: false
+  inference_path: ./model_data/binary/last/lora_plm
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  bias: none
+  weight_decay: 0.0
+  target_modules:
+    - query
+    - key
+    - value
+    - dense
+#lr_schedule:
+#  mode: cosine
+#  warmup_epochs: 4
+#  min_lr_ratio: 0.05
+#freeze_plm_epochs: 0
+
+# ─── Full Fine-tuning ──────────────────────────────────────────────────────
+full:
+  finetune_enable: false
+  state_path: ./model_data/binary/last/plm_full.pt
+  weight_decay: 0.01
+#lr_schedule:
+#  mode: cosine
+#  warmup_epochs: 4
+#  min_lr_ratio: 0.1
+#freeze_plm_epochs: 0

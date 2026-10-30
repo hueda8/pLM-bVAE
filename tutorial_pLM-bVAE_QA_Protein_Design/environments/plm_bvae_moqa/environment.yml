@@ -1,0 +1,22 @@
+name: plm-bvae-moqa-py310
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - idptools-parrot==1.7.5
+      - torch==2.11.0
+      - numpy==2.2.6
+      - dwave-ocean-sdk==9.3.0
+      - botorch==0.16.1
+      - pandas==2.3.3
+      - transformers==5.8.0
+      - peft==0.19.1
+      - PyYAML==6.0.3
+      - tqdm==4.67.3
+      - optuna==4.8.0
+      - biopython==1.86
+      - sentencepiece==0.2.1
+      - scipy==1.15.3
+      - python-Levenshtein

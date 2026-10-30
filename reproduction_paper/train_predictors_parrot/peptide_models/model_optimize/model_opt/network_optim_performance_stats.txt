@@ -1,0 +1,2 @@
+Pearson R : 0.797
+Spearman R : 0.723

@@ -1,0 +1,33 @@
+# Conda package metadata observed in the saved Linux moqa_parrot_py310 environment.
+# Informational inventory only; not a tested installation or lock file.
+# Fields: name | version | build | subdir
+
+_openmp_mutex | 4.5 | 20_gnu | linux-64
+bzip2 | 1.0.8 | hda65f42_9 | linux-64
+ca-certificates | 2026.4.22 | hbd8a1cb_0 | noarch
+ld_impl_linux-64 | 2.45.1 | default_hbd61a6d_102 | linux-64
+libffi | 3.4.6 | h2dba641_1 | linux-64
+libgcc | 15.2.0 | he0feb66_19 | linux-64
+libgcc-ng | 15.2.0 | h69a702a_19 | linux-64
+libgomp | 15.2.0 | he0feb66_19 | linux-64
+liblzma | 5.8.3 | hb03c661_0 | linux-64
+liblzma-devel | 5.8.3 | hb03c661_0 | linux-64
+libnsl | 2.0.1 | hb9d3cd8_1 | linux-64
+libsqlite | 3.53.1 | h0c1763c_0 | linux-64
+libuuid | 2.42 | h5347b49_0 | linux-64
+libzlib | 1.3.2 | h25fd6f3_2 | linux-64
+ncurses | 6.6 | hdb14827_0 | linux-64
+openssl | 3.6.2 | h35e630c_0 | linux-64
+packaging | 26.2 | pyhc364b38_0 | noarch
+pip | 26.1.1 | pyh8b19718_0 | noarch
+python | 3.10.0 | h543edf9_3_cpython | linux-64
+readline | 8.3 | h853b02a_0 | linux-64
+setuptools | 82.0.1 | pyh332efcf_0 | noarch
+sqlite | 3.53.1 | hbc0de68_0 | linux-64
+tk | 8.6.13 | noxft_h366c992_103 | linux-64
+tzdata | 2025c | hc9c84f9_1 | noarch
+wheel | 0.47.0 | pyhd8ed1ab_0 | noarch
+xz | 5.8.3 | ha02ee65_0 | linux-64
+xz-gpl-tools | 5.8.3 | ha02ee65_0 | linux-64
+xz-tools | 5.8.3 | hb03c661_0 | linux-64
+zstd | 1.5.7 | hb78ec9c_6 | linux-64

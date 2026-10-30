@@ -1,0 +1,3 @@
+Learning rate: 0.00106
+Num Layers: 5
+Hidden vector size: 29

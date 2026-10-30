@@ -1,0 +1,8 @@
+name: parrot-py39
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+      - "idptools-parrot[optimize]"

@@ -1,0 +1,114 @@
+# ─── Identity ────────────────────────────────────────────────────────────────
+model_name: binary_prott5
+
+# ─── Paths ───────────────────────────────────────────────────────────────────
+data_path: .../pLM-bVAE/reproduction/data/aav/plm-bvae/
+embeddings_path: ../embeddings/embeddings_prott5/
+model_path: ./model_data/<model_name>/
+output_path: ./model_output/<model_name>/
+
+# ─── Vocabulary ──────────────────────────────────────────────────────────────
+vocab_size: 23
+
+# ─── Input / Embeddings ──────────────────────────────────────────────────────
+input_is_precomputed: true
+embedding_dim: 1024
+
+# ─── Encoder ─────────────────────────────────────────────────────────────────
+encoder_type: rnn_bidi
+encoder_layers: 4
+hidden_size: 384
+use_preproj_mlp: true
+
+# ─── Latent ──────────────────────────────────────────────────────────────────
+latent_type: binary
+latent_size: 64
+
+# ─── Decoder ─────────────────────────────────────────────────────────────────
+decoder_layers: 1
+decoder_embedding_dim: 2
+concat_latent_to_words: true
+
+# ─── Regularisation ──────────────────────────────────────────────────────────
+dropout_rate: 0.0
+word_dropout: 0.0
+input_noise_std: 0.03
+input_dropout_rate: 0.1
+weight_decay: 0.0995626196489794
+
+# ─── Training ────────────────────────────────────────────────────────────────
+tokens_per_batch: 250
+num_epochs: 300
+learning_rate: 0.00010676404994126657
+clip_grad_norm: 0.5
+max_input_length: 100
+max_output_length: 100
+buffer_size: 100
+label_smoothing: 0.00
+seed: 42
+early_stopping: null
+lr_schedule: null
+
+# ─── AMP / Precision ─────────────────────────────────────────────────────────
+amp_dtype: fp32
+use_amp: true
+allow_tf32: true
+grad_accum_steps: 3
+
+# ─── Index selection ─────────────────────────────────────────────────────────
+select_indices: null
+allow_sidecar_indices: true
+
+# ─── PLM ─────────────────────────────────────────────────────────────────────
+# Keys here are loaded as plm_<key>
+#   plm:
+#     backend: prott5    →  plm_backend: prott5
+plm:
+  backend: prott5
+  learning_rate: 0.00005
+  encoder_model: Rostlab/prot_t5_xl_uniref50
+  tokenizer_model: Rostlab/prot_t5_xl_uniref50
+  add_special_tokens: true
+  clean_mode: prott5
+  allow_diff: false
+  batch_size: 8
+  device: auto
+  no_skip_existing: true
+  grad_checkpointing: true
+
+compat_plm: true
+
+
+# ─── LoRA Fine-tuning ──────────────────────────────────────────────────────
+# Keys here are loaded as lora_<key>
+#   lora:
+#     enable: false    →  lora_enable: false
+lora:
+  enable: false
+  inference_path: ./model_data/binary/last/lora_plm
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  bias: none
+  weight_decay: 0.0
+  target_modules:
+    - q
+    - k
+    - v
+    - o
+#lr_schedule:
+#  mode: cosine
+#  warmup_epochs: 4
+#  min_lr_ratio: 0.05
+#freeze_plm_epochs: 0
+
+# ─── Full Fine-tuning ──────────────────────────────────────────────────────
+full:
+  finetune_enable: false
+  state_path: ./model_data/binary/last/plm_full.pt
+  weight_decay: 0.01
+#lr_schedule:
+#  mode: cosine
+#  warmup_epochs: 4
+#  min_lr_ratio: 0.1
+#freeze_plm_epochs: 0
