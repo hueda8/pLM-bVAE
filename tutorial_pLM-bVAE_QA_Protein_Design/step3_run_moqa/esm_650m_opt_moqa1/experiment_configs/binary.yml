@@ -2,8 +2,8 @@
 model_name: binary
 
 # ─── Paths ───────────────────────────────────────────────────────────────────
-data_path: /home/hueda8/projects/01_PLM_BVAE/data/cdrh3/random/plm-bvae/
-embeddings_path: ../embeddings_esm_650m/
+data_path: .../pLM-bVAE/pLM-bVAE_QA_Protein_Design/data/cdrh3/
+embeddings_path: ../embeddings/embeddings_esm_650m/
 model_path: ./model_data/<model_name>/
 output_path: ./model_output/<model_name>/
 
