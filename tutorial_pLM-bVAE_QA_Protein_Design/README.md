@@ -20,24 +20,49 @@ The notebooks use the same random seed and a 0.8:0.1:0.1 split. Check that the r
 
 ## 1. Train pLM-bVAE
 
-In [`step1_train_plm_bvae/esm_650m_opt/`](step1_train_plm_bvae/esm_650m_opt/), edit `experiment_configs/binary.yml` to point to the prepared data, embeddings, model, and output directories. The example uses the ESM-2 650M encoder and precomputed embeddings. After adapting the shell scripts and environment setup, run them from this directory:
+![Training pLM-bVAE with a frozen ESM-2 650M encoder](images/step1.png)
+
+The frozen ESM-2 650M encoder produces residue-level representations of the Trastuzumab-scFv sequences. The representations of the CDRH3 variant region are provided to the bVAE, which learns to encode the sequences as binary vectors and reconstruct them. Hyperparameter optimization (HPO) can be used to select the pLM-bVAE training settings.
+
+In [`step1_train_plm_bvae/esm_650m_opt/`](step1_train_plm_bvae/esm_650m_opt/), update the data, embeddings, model, and output paths in `experiment_configs/binary.yml`. After adapting the shell scripts and environment setup, generate ESM-2 embeddings for the training, validation, and test sets from this directory:
 
 ```bash
 bash emb_esm2.sh
+```
+
+To perform HPO, configure and run `cre_opt_db.sh` followed by `opt_bvae.sh`, then select and apply the resulting hyperparameters. Train and evaluate pLM-bVAE with:
+
+```bash
 bash train_bvae.sh
 bash eval_bvae.sh
 bash encode_bvae.sh
 ```
 
-These commands generate embeddings for the three splits, train the model, evaluate it on the test set, and encode test sequences into binary vectors. `decode_bvae.sh` reconstructs sequences from vectors. For optional hyperparameter optimization, configure and run `cre_opt_db.sh` followed by `opt_bvae.sh`, then select and apply the resulting hyperparameters before training. Retain the trained `best/model.pt` checkpoint and its matching configuration for MOQA.
+These scripts train the model, evaluate it on the test set, and encode test sequences into binary vectors. Run `bash decode_bvae.sh` to reconstruct sequences from the vectors. Retain the trained `best/model.pt` checkpoint and its matching configuration for MOQA.
 
 ## 2. Train the PARROT predictors
 
-In [`step2_train_predictors_parrot/`](step2_train_predictors_parrot/), use the PARROT training environment. Adjust each `model1/train.sh`, `model2/train.sh`, and `model3/train.sh` to point to the prepared sequence-score file, split indices, and [`zscale3_encoding.txt`](zscale3_encoding.txt). The prepared split file is named `cdrh3_random_indices.txt`; update the scripts' `--split` paths accordingly. Run each script from its own model directory to train three predictors.
+![Training three PARROT predictors and using their predicted scores](images/step2.png)
 
-The optional `model_optimize/opt_model.sh` performs predictor hyperparameter optimization using the training and validation data. Adapt its paths before running it. The three trained `model/network.pt` files are inputs to MOQA.
+Each PARROT predictor is a bidirectional long short-term memory (BiLSTM) model trained on variant-region sequences and their measured scores using mean absolute error (MAE) loss. The three predicted scores are used separately as objective function values in MOQA. Their average is used as a computational oracle score to evaluate optimization performance.
+
+In [`step2_train_predictors_parrot/`](step2_train_predictors_parrot/), use the PARROT training environment. Update `model1/train.sh`, `model2/train.sh`, and `model3/train.sh` with the sequence-score file, split indices, and [`zscale3_encoding.txt`](zscale3_encoding.txt). The prepared split file is named `cdrh3_random_indices.txt`; update each script's `--split` path accordingly. For optional predictor HPO, adapt and run `model_optimize/opt_model.sh` using the training and validation data.
+
+From `step2_train_predictors_parrot/`, run each training script in its model directory:
+
+```bash
+(cd model1 && bash train.sh)
+(cd model2 && bash train.sh)
+(cd model3 && bash train.sh)
+```
+
+The three trained `model/network.pt` files are inputs to MOQA.
 
 ## 3. Run MOQA
+
+![MOQA workflow combining pLM-bVAE, predictors, a factorization machine, and quantum annealing](images/step3.png)
+
+MOQA iteratively searches the binary latent space. The pLM-bVAE decoder reconstructs amino acid sequences from binary vectors, and the three predictors estimate their objective function values. Non-dominated sorting assigns a MOQA score to each sequence. A factorization machine (FM) is trained on the binary vectors and MOQA scores, then converted to a quadratic unconstrained binary optimization (QUBO) problem. Quantum annealing samples new binary vectors, and the cycle is repeated.
 
 In [`step3_run_moqa/esm_650m_opt_moqa1/`](step3_run_moqa/esm_650m_opt_moqa1/), use the pLM-bVAE and MOQA environment and prepare the following inputs:
 
