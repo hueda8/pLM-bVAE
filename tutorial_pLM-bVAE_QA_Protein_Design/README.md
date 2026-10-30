@@ -20,7 +20,7 @@ The notebooks use the same random seed and a 0.8:0.1:0.1 split. Check that the r
 
 ## 1. Train pLM-bVAE
 
-<img src="images/step1.png" alt="Training pLM-bVAE with a frozen ESM-2 650M encoder" width="800">
+<img src="images/step1.png" alt="Training pLM-bVAE with a frozen ESM-2 650M encoder" width="600">
 
 The frozen ESM-2 650M encoder produces residue-level representations of the Trastuzumab-scFv sequences. The representations of the CDRH3 variant region are provided to the bVAE, which learns to encode the sequences as binary vectors and reconstruct them. Hyperparameter optimization (HPO) can be used to select the pLM-bVAE training settings.
 
@@ -60,7 +60,7 @@ The three trained `model/network.pt` files are inputs to MOQA.
 
 ## 3. Run MOQA
 
-<img src="images/step3.png" alt="MOQA workflow combining pLM-bVAE, predictors, a factorization machine, and quantum annealing" width="800">
+<img src="images/step3.png" alt="MOQA workflow combining pLM-bVAE, predictors, a factorization machine, and quantum annealing" width="700">
 
 MOQA iteratively searches the binary latent space. The pLM-bVAE decoder reconstructs amino acid sequences from binary vectors, and the three predictors estimate their objective function values. Non-dominated sorting assigns a MOQA score to each sequence. A factorization machine (FM) is trained on the binary vectors and MOQA scores, then converted to a quadratic unconstrained binary optimization (QUBO) problem. Quantum annealing samples new binary vectors, and the cycle is repeated.
 
