@@ -23,7 +23,7 @@
     "clip_grad_norm": 2.0,
     "keep_checkpoint_max": 10,
     
-    "data_path": "/home/hueda8/projects/01_PLM_BVAE/data/peptide/random/bvae/",
+    "data_path": ".../pLM-bVAE/reproduction/data/peptide/bvae/",
     "model_path": "./model_data/<model_name>/",
     "output_path": "./model_output/<model_name>/",
     
