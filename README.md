@@ -18,3 +18,11 @@ pLM-bVAE is a protein language model-enhanced binary representation method for q
 | [`tutorial_pLM-bVAE_QA_Protein_Design/`](tutorial_pLM-bVAE_QA_Protein_Design/README.md) | A step-by-step example using Trastuzumab-scFv CDRH3 variants. It covers data preparation, pLM-bVAE training, training three PARROT predictors, and running MOQA. |
 
 Start with `reproduction_paper/` to reproduce or analyze the paper's experiments, or with `tutorial_pLM-bVAE_QA_Protein_Design/` to work through the design workflow. Follow the README in each directory for environment setup and path configuration. The provided MOQA sampler requires access to a compatible D-Wave solver.
+
+## Citation and references
+
+If you use this repository, please cite the software using the information in [CITATION.cff](CITATION.cff), together with the references relevant to your work:
+
+- **Methods and predictors:** [bVAE](https://doi.org/10.1007/978-3-030-34518-1_10), [Optuna](https://doi.org/10.1145/3292500.3330701), [PARROT](https://doi.org/10.7554/eLife.70576), and [MOQA](https://doi.org/10.1038/s41598-023-51095-z).
+- **Protein language models:** [ESM2](https://doi.org/10.1126/science.ade2574), [ProtT5 / ProtTrans](https://doi.org/10.1109/TPAMI.2021.3095381), [ProstT5](https://doi.org/10.1093/nargab/lqae150), and [Ankh](https://doi.org/10.48550/arXiv.2301.06568).
+- **Datasets:** [IEDB for MHC-I binding peptides](https://doi.org/10.1093/nar/gky1006), [AlphaBind for Trastuzumab-scFv CDRH3 variants](https://doi.org/10.1080/19420862.2025.2534626), and [Bryant et al. for AAV capsid surface region variants](https://doi.org/10.1038/s41587-020-00793-4).
