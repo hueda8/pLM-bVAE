@@ -68,7 +68,7 @@ model_hparams:
   full_finetune_enable: false
   full_state_path: ./model_data/binary/last/plm_full.pt
   full_weight_decay: 0.01
-  user_name: hueda8
+  user_name: user_name
   preproj_hidden: null
   deterministic: false
   resume_checkpoint: null
