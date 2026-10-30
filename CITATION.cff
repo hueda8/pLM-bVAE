@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: >-
   If you use this software, please cite it using the metadata below and
-  cite the relevant references for the methods and models used in your work.
+  cite the relevant references for the methods, models, and datasets used in your work.
 title: "pLM-bVAE: protein language model-enhanced binary representation for quantum annealing-based protein sequence design"
 type: software
 authors:
@@ -169,4 +169,69 @@ references:
     doi: 10.48550/arXiv.2301.06568
     url: https://arxiv.org/abs/2301.06568
     notes: "Reference for the Ankh protein language model; arXiv preprint."
+  - type: article
+    title: "The Immune Epitope Database (IEDB): 2018 update"
+    authors:
+      - {family-names: Vita, given-names: R}
+      - {family-names: Mahajan, given-names: S}
+      - {family-names: Overton, given-names: JA}
+      - {family-names: Dhanda, given-names: SK}
+      - {family-names: Martini, given-names: S}
+      - {family-names: Cantrell, given-names: JR}
+      - {family-names: Wheeler, given-names: DK}
+      - {family-names: Sette, given-names: A}
+      - {family-names: Peters, given-names: B}
+    journal: Nucleic Acids Research
+    year: 2019
+    volume: 47
+    issue: D1
+    start: D339
+    end: D343
+    doi: 10.1093/nar/gky1006
+    notes: "Reference for the IEDB resource used for the MHC-I binding peptide dataset."
+  - type: article
+    title: "AlphaBind, a domain-specific model to predict and optimize antibody–antigen binding affinity"
+    authors:
+      - {family-names: Agarwal, given-names: AA}
+      - {family-names: Harrang, given-names: J}
+      - {family-names: Noble, given-names: D}
+      - {family-names: McGowan, given-names: KL}
+      - {family-names: Lange, given-names: AW}
+      - {family-names: Engelhart, given-names: E}
+      - {family-names: Lahman, given-names: MC}
+      - {family-names: Adamo, given-names: J}
+      - {family-names: Yu, given-names: X}
+      - {family-names: Serang, given-names: O}
+      - {family-names: Minch, given-names: KJ}
+      - {family-names: Wellman, given-names: KY}
+      - {family-names: Younger, given-names: DA}
+      - {family-names: Lopez, given-names: RM}
+      - {family-names: Emerson, given-names: RO}
+    journal: mAbs
+    year: 2025
+    volume: 17
+    issue: 1
+    start: "2534626"
+    doi: 10.1080/19420862.2025.2534626
+    notes: "Reference for the Trastuzumab-scFv CDRH3 variant dataset."
+  - type: article
+    title: "Deep diversification of an AAV capsid protein by machine learning"
+    authors:
+      - {family-names: Bryant, given-names: DH}
+      - {family-names: Bashir, given-names: A}
+      - {family-names: Sinai, given-names: S}
+      - {family-names: Jain, given-names: NK}
+      - {family-names: Ogden, given-names: PJ}
+      - {family-names: Riley, given-names: PF}
+      - {family-names: Church, given-names: GM}
+      - {family-names: Colwell, given-names: LJ}
+      - {family-names: Kelsic, given-names: ED}
+    journal: Nature Biotechnology
+    year: 2021
+    volume: 39
+    issue: 6
+    start: 691
+    end: 696
+    doi: 10.1038/s41587-020-00793-4
+    notes: "Reference for the AAV capsid surface region variant dataset."
 
