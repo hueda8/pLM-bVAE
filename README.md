@@ -4,7 +4,7 @@ pLM-bVAE is a protein language model-enhanced binary representation method for q
 
 ## Overview
 
-![Overview of pLM-bVAE and the workflow of QA-based protein sequence design](docs/images/Fig1.png)
+<img src="docs/images/Fig1.png" alt="Overview of pLM-bVAE and the workflow of QA-based protein sequence design" width="800">
 
 - **A. Training pLM-bVAE:** A pLM encoder converts a full-length protein sequence into residue-level representations. Representations for the variant region are passed to the bVAE, which encodes them as a binary vector and reconstructs the variant sequence. The bVAE is trained with negative log-likelihood (NLL) loss, while the pLM encoder is frozen. The figure shows ESM2, ProtT5, ProstT5, and Ankh as pLM choices.
 - **B. Training predictors:** Bidirectional long short-term memory (BiLSTM) predictors are trained on variant sequences and their measured scores using mean absolute error (MAE) loss. For each dataset, three predictors estimate the same property; their predictions are used separately in the multi-objective optimization.
