@@ -5,7 +5,7 @@ This tutorial uses Trastuzumab-scFv CDRH3 variants to demonstrate a workflow for
 ## Before starting
 
 1. Set up the [pLM-bVAE and MOQA environment](environments/plm_bvae_moqa/README.md) and the separate [PARROT predictor training environment](environments/parrot/README.md). Apply the modified PARROT files as described in each environment's README.
-2. Adapt paths in the notebooks, configuration files, and scripts to your machine. The scripts use Linux shell commands and some contain PBS or machine-specific settings. Update the conda initialization paths in `set_envs/`; in particular, `run_moqa.sh` currently refers to an older environment setup script and must be changed to use `setenv_plm-bvae-moqa-py310.sh`.
+2. Adapt paths in the notebooks, configuration files, and scripts to your machine. The scripts use Bash and include paths that must be adapted to the target machine. Update the conda initialization paths in `set_envs/`; in particular, `run_moqa.sh` currently refers to an older environment setup script and must be changed to use `setenv_plm-bvae-moqa-py310.sh`.
 3. The preparation notebooks require Jupyter, pandas, NumPy, seaborn, and matplotlib; the download notebook also requires Hugging Face `datasets`. Install these in the notebook environment if needed. Model and dataset downloads require network access. GPU-enabled PyTorch is recommended for pLM embeddings and training; a D-Wave account and access to a compatible solver are required for the provided MOQA sampler.
 
 ## 0. Prepare the data
