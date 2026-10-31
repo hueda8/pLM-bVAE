@@ -20,7 +20,7 @@ The notebooks use the same random seed and a 0.8:0.1:0.1 split. Check that the r
 
 ## 1. Train pLM-bVAE
 
-<img src="images/step1.png" alt="Training pLM-bVAE with a frozen ESM-2 650M encoder" width="600">
+<img src="images/step1.png" alt="Training pLM-bVAE with a frozen ESM-2 650M encoder" width="500">
 
 The frozen ESM-2 650M encoder produces residue-level representations of the Trastuzumab-scFv sequences. The representations of the CDRH3 variant region are provided to the bVAE, which learns to encode the sequences as binary vectors and reconstruct them. Hyperparameter optimization (HPO) can be used to select the pLM-bVAE training settings.
 
