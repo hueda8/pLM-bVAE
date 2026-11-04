@@ -1,0 +1,128 @@
+Levenshtein distances: Previous vs Modified
+ Levenshtein Distance  Previous  Modified
+                    0         0         3
+                    1         4        16
+                    2         9        82
+                    3        51       178
+                    4        53       265
+                    5       124       253
+                    6       125       160
+                    7       144       138
+                    8       140       113
+                    9       128       104
+                   10       100        77
+                   11       137        57
+                   12       125        55
+                   13       116        26
+                   14        96        32
+                   15        78        28
+                   16        65        14
+                   17        53        15
+                   18        36        12
+                   19        20         6
+                   20        15         3
+                   21        12         7
+                   22         6         4
+                   23         8         4
+                   24        10         7
+                   25         7         3
+                   26         9         4
+                   27         2         5
+                   28         1         1
+                   29         0         3
+                   31         1         0
+
+BLOSUM62 scores: Previous vs Modified
+ BLOSUM62 Score  Previous  Modified
+             -5         1         0
+              0         0         0
+              5         0         1
+             10         0         1
+             15         4         5
+             20         5         2
+             25         4         0
+             30         1         2
+             35         5         6
+             40         9         2
+             45         7         1
+             50         8         2
+             55         8         5
+             60        17         2
+             65        31         6
+             70        57         4
+             75        73         8
+             80       104         8
+             85       104        13
+             90       118        23
+             95       152        17
+            100       162        33
+            105       152        64
+            110       122        71
+            115       136       134
+            120        86       154
+            125        84       208
+            130        56       180
+            135        32       169
+            140        13       100
+            145        12        83
+            150        11        60
+            155         9        50
+            160        17        53
+            165        12        54
+            170        20        42
+            175        12        44
+            180        19        30
+            185         6        22
+            190         3        12
+            195         1         4
+            200         1         0
+            205         0         0
+            210         1         0
+
+Levenshtein distance of test_seqs vs Hamming distance of binary vectors:
+Previous model Pearson corr: 0.12664366620449674
+Modified model Pearson corr: 0.4811183231270454
+
+Previous model Spearman corr: 0.1043883576018692
+Modified model Spearman corr: 0.4852894883451235
+
+BLOSUM62 scores of test_seqs vs Hamming distance of binary vectors:
+Previous model Pearson corr: -0.1796863392181059
+Modified model Pearson corr: -0.5451238809429741
+
+Previous model Spearman corr: -0.1679833132946441
+Modified model Spearman corr: -0.5586788420922548
+
+The length of decoded_seqs by Previous model:
+seqs
+31    633
+32    286
+33    257
+36    143
+34     89
+37     82
+30     79
+35     70
+38     22
+39      6
+41      5
+29      2
+40      1
+
+The length of decoded_seqs by Modified model:
+seqs
+34    271
+33    235
+32    232
+31    221
+35    211
+36    160
+30    158
+37    103
+38     44
+29     26
+39     11
+41      1
+40      1
+28      1
+

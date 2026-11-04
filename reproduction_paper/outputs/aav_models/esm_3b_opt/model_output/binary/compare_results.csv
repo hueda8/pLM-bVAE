@@ -1,0 +1,131 @@
+Levenshtein distances: Previous vs Modified
+ Levenshtein Distance  Previous  Modified
+                    0         0       214
+                    1         8       304
+                    2        36       350
+                    3       111       261
+                    4       171       155
+                    5       191       109
+                    6       161        87
+                    7       154        67
+                    8       109        31
+                    9       109        24
+                   10        85        22
+                   11        90         9
+                   12        81        17
+                   13        78         7
+                   14        70         4
+                   15        57         0
+                   16        50         1
+                   17        26         1
+                   18        16         0
+                   19        14         0
+                   20        15         3
+                   21         5         0
+                   22         2         2
+                   23         7         1
+                   24         4         1
+                   25        11         3
+                   26         4         1
+                   27         5         1
+                   29         2         0
+                   30         2         0
+                   31         1         0
+
+BLOSUM62 scores: Previous vs Modified
+ BLOSUM62 Score  Previous  Modified
+              5         2         0
+             10         0         0
+             15         1         0
+             20         5         0
+             25         2         0
+             30         6         0
+             35         4         2
+             40         4         1
+             45         5         1
+             50         1         0
+             55         5         2
+             60         1         3
+             65        10         1
+             70        12         0
+             75        14         2
+             80        23         0
+             85        29         0
+             90        41         0
+             95        58         3
+            100       101         1
+            105        99         6
+            110       139         7
+            115       184        14
+            120       163        19
+            125       186        30
+            130       158        49
+            135       108        75
+            140        74       119
+            145        46       138
+            150        44       182
+            155        37       175
+            160        13       180
+            165        25       131
+            170        32       132
+            175        17       108
+            180        14        81
+            185         5        89
+            190         4        51
+            195         3        40
+            200         0        17
+            205         0         6
+            210         0         4
+            215         0         4
+            220         0         1
+            225         0         0
+            230         0         1
+
+Levenshtein distance of test_seqs vs Hamming distance of binary vectors:
+Previous model Pearson corr: 0.33715321037947543
+Modified model Pearson corr: 0.4716685462195026
+
+Previous model Spearman corr: 0.33609011035343495
+Modified model Spearman corr: 0.4799446714848267
+
+BLOSUM62 scores of test_seqs vs Hamming distance of binary vectors:
+Previous model Pearson corr: -0.4677165205507813
+Modified model Pearson corr: -0.48286208538940883
+
+Previous model Spearman corr: -0.4807716313144024
+Modified model Spearman corr: -0.49348456270931546
+
+The length of decoded_seqs by Previous model:
+seqs
+34    258
+33    232
+32    210
+31    208
+35    195
+36    184
+37    144
+29    118
+30     73
+38     39
+39     11
+42      2
+40      1
+
+The length of decoded_seqs by Modified model:
+seqs
+31    226
+34    225
+33    191
+32    187
+35    184
+36    153
+30    151
+37    117
+38    103
+39     53
+29     49
+40     23
+28      8
+41      4
+42      1
+

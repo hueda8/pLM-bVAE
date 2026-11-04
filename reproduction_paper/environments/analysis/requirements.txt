@@ -1,0 +1,15 @@
+# Direct dependencies used by results/ and data_preparation/ notebooks.
+# Versions are taken from the original Python 3.10 analysis environment.
+biopython==1.85
+datasets==4.8.4
+ipykernel==6.29.5
+Levenshtein==0.27.1
+matplotlib==3.10.1
+numpy==2.2.5
+openpyxl==3.1.5
+pandas==2.2.3
+scikit-learn==1.6.1
+scipy==1.15.2
+seaborn==0.13.2
+tqdm==4.67.1
+umap-learn==0.5.9.post2

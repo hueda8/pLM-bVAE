@@ -1,0 +1,20 @@
+name: plm-bvae-py312
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12.0
+  - pip
+  - pip:
+      - torch==2.10.0
+      - numpy==2.4.2
+      - transformers==5.0.0
+      - peft==0.18.1
+      - optuna==4.7.0
+      - PyYAML==6.0.3
+      - tqdm==4.67.3
+      - pandas==3.0.0
+      - biopython==1.86
+      - sentencepiece==0.2.1
+      # Needed by compare_distance.py; versions were not found in the saved environment.
+      - scipy
+      - python-Levenshtein

@@ -1,0 +1,64 @@
+Levenshtein distances: Previous vs Modified
+ Levenshtein Distance  Previous  Modified
+                    0        30       186
+                    1       124       260
+                    2       211       328
+                    3       304       247
+                    4       268       123
+                    5       173        53
+                    6        70        15
+                    7        23         2
+                    8         9         2
+                    9         1         0
+                   11         1         0
+                   13         1         0
+                   14         1         0
+
+BLOSUM62 scores: Previous vs Modified
+ BLOSUM62 Score  Previous  Modified
+            -15         2         0
+            -10         5         0
+             -5        10         0
+              0        29         5
+              5        66         6
+             10       118        19
+             15       173        50
+             20       223        89
+             25       218       164
+             30       181       225
+             35       109       264
+             40        51       233
+             45        23       119
+             50         5        35
+             55         3         7
+
+Levenshtein distance of test_seqs vs Hamming distance of binary vectors:
+Previous model Pearson corr: 0.3069585036393203
+Modified model Pearson corr: 0.4254413899564905
+
+Previous model Spearman corr: 0.300215797771557
+Modified model Spearman corr: 0.41919928599422784
+
+BLOSUM62 scores of test_seqs vs Hamming distance of binary vectors:
+Previous model Pearson corr: -0.2694124508165458
+Modified model Pearson corr: -0.4683164379796134
+
+Previous model Spearman corr: -0.2458691247311218
+Modified model Spearman corr: -0.4434012304713555
+
+The length of decoded_seqs by Previous model:
+seqs
+9     916
+10    272
+8      15
+11     10
+12      2
+14      1
+
+The length of decoded_seqs by Modified model:
+seqs
+9     915
+10    294
+8       6
+11      1
+

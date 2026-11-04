@@ -1,0 +1,59 @@
+Levenshtein distances: Previous vs Modified
+ Levenshtein Distance  Previous  Modified
+                    0       844       927
+                    1        86        25
+                    2        26         5
+                    3         2         0
+                    4         1         1
+                    5         1         0
+                    7         0         1
+                   87         0         1
+
+BLOSUM62 scores: Previous vs Modified
+ BLOSUM62 Score  Previous  Modified
+             25         0         1
+             30         0         0
+             35         0         0
+             40         0         0
+             45         0         0
+             50         0         1
+             55         0         0
+             60         0         0
+             65         1         0
+             70         1         3
+             75         7         1
+             80        13         2
+             85        49        28
+             90       217       204
+             95       344       369
+            100       273       291
+            105        52        58
+            110         3         2
+
+Levenshtein distance of test_seqs vs Hamming distance of binary vectors:
+Previous model Pearson相関: 0.4877713904657143
+Modified model Pearson相関: 0.7161614031326065
+
+Previous model Spearman相関: 0.4660510275714392
+Modified model Spearman相関: 0.7081178256811467
+
+BLOSUM62 scores of test_seqs vs Hamming distance of binary vectors:
+Previous model Pearson相関: -0.4868013441008381
+Modified model Pearson相関: -0.6833491165485996
+
+Previous model Spearman相関: -0.46463853374432923
+Modified model Spearman相関: -0.674728775294845
+
+The length of decoded_seqs by Previous model:
+seqs
+15    950
+16      6
+14      4
+
+The length of decoded_seqs by Modified model:
+seqs
+15     949
+16       6
+14       4
+100      1
+

@@ -1,0 +1,245 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite it using the metadata below and
+  cite the relevant references for the methods, models, and datasets used in your work.
+title: "pLM-bVAE: protein language model-enhanced binary representation for quantum annealing-based protein sequence design"
+type: software
+authors:
+  - family-names: Ueda
+    given-names: Hiromi H
+  - family-names: Tučs
+    given-names: Andrejs
+  - family-names: Tsuda
+    given-names: Koji
+  - family-names: Umetsu
+    given-names: Mitsuo
+  - family-names: Saito
+    given-names: Yutaka
+references:
+  - type: conference-paper
+    title: "Binary Autoencoder for Text Modeling"
+    authors:
+      - family-names: Baynazarov
+        given-names: R
+      - family-names: Piontkovskaya
+        given-names: I
+    year: 2019
+    collection-title: "Artificial Intelligence and Natural Language"
+    editors:
+      - {family-names: Ustalov, given-names: D}
+      - {family-names: Filchenkov, given-names: A}
+      - {family-names: Pivovarova, given-names: L}
+    publisher:
+      name: Springer International Publishing
+    start: 139
+    end: 150
+    doi: 10.1007/978-3-030-34518-1_10
+    notes: "Reference for the binary variational autoencoder (bVAE)."
+  - type: conference-paper
+    title: "Optuna: A Next-generation Hyperparameter Optimization Framework"
+    authors:
+      - family-names: Akiba
+        given-names: T
+      - family-names: Sano
+        given-names: S
+      - family-names: Yanase
+        given-names: T
+      - family-names: Ohta
+        given-names: T
+      - family-names: Koyama
+        given-names: M
+    year: 2019
+    collection-title: "Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining"
+    publisher:
+      name: Association for Computing Machinery
+    start: 2623
+    end: 2631
+    doi: 10.1145/3292500.3330701
+    url: https://dl.acm.org/doi/10.1145/3292500.3330701
+    notes: "Reference for hyperparameter optimization with Optuna."
+  - type: article
+    title: "PARROT is a flexible recurrent neural network framework for analysis of large protein datasets"
+    authors:
+      - family-names: Griffith
+        given-names: D
+      - family-names: Holehouse
+        given-names: AS
+    journal: eLife
+    year: 2021
+    volume: 10
+    start: e70576
+    doi: 10.7554/eLife.70576
+    notes: "Reference for training predictors with PARROT."
+  - type: article
+    title: "Extensive antibody search with whole spectrum black-box optimization"
+    authors:
+      - family-names: Tučs
+        given-names: A
+      - family-names: Ito
+        given-names: T
+      - family-names: Kurumida
+        given-names: Y
+      - family-names: Kawada
+        given-names: S
+      - family-names: Nakazawa
+        given-names: H
+      - family-names: Saito
+        given-names: Y
+      - family-names: Umetsu
+        given-names: M
+      - family-names: Tsuda
+        given-names: K
+    journal: Scientific Reports
+    year: 2024
+    volume: 14
+    issue: 1
+    start: "552"
+    doi: 10.1038/s41598-023-51095-z
+    notes: "Reference for multi-objective optimization by quantum annealing (MOQA)."
+  - type: article
+    title: "Evolutionary-scale prediction of atomic-level protein structure with a language model"
+    authors:
+      - {family-names: Lin, given-names: Z}
+      - {family-names: Akin, given-names: H}
+      - {family-names: Rao, given-names: R}
+      - {family-names: Hie, given-names: B}
+      - {family-names: Zhu, given-names: Z}
+      - {family-names: Lu, given-names: W}
+      - {family-names: Smetanin, given-names: N}
+      - {family-names: Verkuil, given-names: R}
+      - {family-names: Kabeli, given-names: O}
+      - {family-names: Shmueli, given-names: Y}
+      - {family-names: dos Santos Costa, given-names: Allan}
+      - {family-names: Fazel-Zarandi, given-names: Maryam}
+      - {family-names: Sercu, given-names: Tom}
+      - {family-names: Candido, given-names: Salvatore}
+      - {family-names: Rives, given-names: Alexander}
+    journal: Science
+    year: 2023
+    volume: 379
+    issue: 6637
+    start: 1123
+    end: 1130
+    doi: 10.1126/science.ade2574
+    notes: "Reference for the ESM2 protein language model."
+  - type: article
+    title: "ProtTrans: Toward Understanding the Language of Life Through Self-Supervised Learning"
+    authors:
+      - {family-names: Elnaggar, given-names: A}
+      - {family-names: Heinzinger, given-names: M}
+      - {family-names: Dallago, given-names: C}
+      - {family-names: Rehawi, given-names: G}
+      - {family-names: Wang, given-names: Y}
+      - {family-names: Jones, given-names: L}
+      - {family-names: Gibbs, given-names: T}
+      - {family-names: Feher, given-names: T}
+      - {family-names: Angerer, given-names: C}
+      - {family-names: Steinegger, given-names: M}
+      - {family-names: Bhowmik, given-names: Debsindhu}
+      - {family-names: Rost, given-names: Burkhard}
+    journal: IEEE Transactions on Pattern Analysis and Machine Intelligence
+    year: 2022
+    volume: 44
+    issue: 10
+    start: 7112
+    end: 7127
+    doi: 10.1109/TPAMI.2021.3095381
+    notes: "Reference for the ProtT5 protein language model."
+  - type: article
+    title: "Bilingual language model for protein sequence and structure"
+    authors:
+      - {family-names: Heinzinger, given-names: M}
+      - {family-names: Weissenow, given-names: K}
+      - {family-names: Sanchez, given-names: JG}
+      - {family-names: Henkel, given-names: A}
+      - {family-names: Mirdita, given-names: M}
+      - {family-names: Steinegger, given-names: M}
+      - {family-names: Rost, given-names: B}
+    journal: NAR Genomics and Bioinformatics
+    year: 2024
+    volume: 6
+    issue: 4
+    start: lqae150
+    doi: 10.1093/nargab/lqae150
+    notes: "Reference for the ProstT5 protein language model."
+  - type: article
+    title: "Ankh: Optimized Protein Language Model Unlocks General-Purpose Modelling"
+    authors:
+      - {family-names: Elnaggar, given-names: A}
+      - {family-names: Essam, given-names: H}
+      - {family-names: Salah-Eldin, given-names: W}
+      - {family-names: Moustafa, given-names: W}
+      - {family-names: Elkerdawy, given-names: M}
+      - {family-names: Rochereau, given-names: C}
+      - {family-names: Rost, given-names: B}
+    year: 2023
+    status: preprint
+    doi: 10.48550/arXiv.2301.06568
+    url: https://arxiv.org/abs/2301.06568
+    notes: "Reference for the Ankh protein language model; arXiv preprint."
+  - type: article
+    title: "The Immune Epitope Database (IEDB): 2018 update"
+    authors:
+      - {family-names: Vita, given-names: R}
+      - {family-names: Mahajan, given-names: S}
+      - {family-names: Overton, given-names: JA}
+      - {family-names: Dhanda, given-names: SK}
+      - {family-names: Martini, given-names: S}
+      - {family-names: Cantrell, given-names: JR}
+      - {family-names: Wheeler, given-names: DK}
+      - {family-names: Sette, given-names: A}
+      - {family-names: Peters, given-names: B}
+    journal: Nucleic Acids Research
+    year: 2019
+    volume: 47
+    issue: D1
+    start: D339
+    end: D343
+    doi: 10.1093/nar/gky1006
+    notes: "Reference for the IEDB resource used for the MHC-I binding peptide dataset."
+  - type: article
+    title: "AlphaBind, a domain-specific model to predict and optimize antibody–antigen binding affinity"
+    authors:
+      - {family-names: Agarwal, given-names: AA}
+      - {family-names: Harrang, given-names: J}
+      - {family-names: Noble, given-names: D}
+      - {family-names: McGowan, given-names: KL}
+      - {family-names: Lange, given-names: AW}
+      - {family-names: Engelhart, given-names: E}
+      - {family-names: Lahman, given-names: MC}
+      - {family-names: Adamo, given-names: J}
+      - {family-names: Yu, given-names: X}
+      - {family-names: Serang, given-names: O}
+      - {family-names: Minch, given-names: KJ}
+      - {family-names: Wellman, given-names: KY}
+      - {family-names: Younger, given-names: DA}
+      - {family-names: Lopez, given-names: RM}
+      - {family-names: Emerson, given-names: RO}
+    journal: mAbs
+    year: 2025
+    volume: 17
+    issue: 1
+    start: "2534626"
+    doi: 10.1080/19420862.2025.2534626
+    notes: "Reference for the Trastuzumab-scFv CDRH3 variant dataset."
+  - type: article
+    title: "Deep diversification of an AAV capsid protein by machine learning"
+    authors:
+      - {family-names: Bryant, given-names: DH}
+      - {family-names: Bashir, given-names: A}
+      - {family-names: Sinai, given-names: S}
+      - {family-names: Jain, given-names: NK}
+      - {family-names: Ogden, given-names: PJ}
+      - {family-names: Riley, given-names: PF}
+      - {family-names: Church, given-names: GM}
+      - {family-names: Colwell, given-names: LJ}
+      - {family-names: Kelsic, given-names: ED}
+    journal: Nature Biotechnology
+    year: 2021
+    volume: 39
+    issue: 6
+    start: 691
+    end: 696
+    doi: 10.1038/s41587-020-00793-4
+    notes: "Reference for the AAV capsid surface region variant dataset."
+
